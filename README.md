@@ -8,23 +8,15 @@ This project focuses on intelligent path planning and navigation of autonomous r
 
 \`\`\`
 📦 Project Root
-├── matlabcode.m  
-          # MATLAB script for robot navigation logic
-├── AIR_Report_Final_.docx 
-          # Final report explaining the project methodology
-├── air_pptNew.pptx 
-          # PowerPoint presentation summarizing the project
-└── AIR FIG/     
-          # Folder containing figures and media
-    ├── Bidirectional Navigation.jpg
-    
-    ├── Gazebo simulation.jpg
-    
-    ├── SIMULATION VIDEO.mp4
-    
-    ├── Validated Paths.jpg
-    
-    └── Ware Occupancy GRID.jpg
+├── matlabcode.m            # MATLAB script for robot navigation logic
+├── AIR_Report_Final_.docx  # Final report explaining the project methodology
+├── air_pptNew.pptx         # PowerPoint presentation summarizing the project
+└── AIR FIG/                # Folder containing figures and media
+├── Bidirectional Navigation.jpg    
+├── Gazebo simulation.jpg 
+├── SIMULATION VIDEO.mp4
+├── Validated Paths.jpg
+└── Ware Occupancy GRID.jpg
 \`\`\`
 
 ## 🚀 Project Highlights

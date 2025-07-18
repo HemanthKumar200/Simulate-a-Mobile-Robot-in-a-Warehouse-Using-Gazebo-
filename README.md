@@ -1,76 +1,97 @@
-# Simulate-a-Mobile-Robot-in-a-Warehouse-Using-Gazebo-
-cat << 'EOF' > README.md
-# Autonomous Intelligent Robot Navigation System
+# Simulate a Mobile Robot in a Warehouse Using Gazebo
 
-This project focuses on intelligent path planning and navigation of autonomous robots, using MATLAB for simulation and algorithm development. It includes a comprehensive simulation environment, presentation, report, and relevant visualizations.
+## Project Overview
 
-## 📁 Project Structure
+This project simulates a mobile robot navigating a 3D warehouse environment using Gazebo 11 and ROS Noetic. The robot employs Dijkstra’s algorithm for optimal path planning, dynamically avoiding obstacles while reaching its goal position. The simulation showcases real-time robot movement, intelligent pathfinding, and obstacle avoidance in a structured warehouse setup.
 
-\`\`\`
-📦 Project Root
-├── matlabcode.m            # MATLAB script for robot navigation logic
+## Project Highlights
 
-├── AIR_Report_Final_.docx  # Final report explaining the project methodology
+- **3D Warehouse Simulation** – Built using Gazebo 11 for realistic environment modeling.
+- **Path Planning** – Uses Dijkstra’s algorithm to compute the shortest path.
+- **Dynamic Obstacle Avoidance** – Implements costmaps for real-time navigation adjustments.
+- **Visualization Features:**
+  - Shortest path (highlighted in red)
+  - Robot’s movement trail (displayed as a green transparent line)
+- **Realistic Navigation** – Avoids blocked paths and recalculates routes dynamically.
+- **Simulation Environment** – Runs on MATLAB R2024b and Ubuntu 20.04 (Oracle VM).
 
-├── air_pptNew.pptx         # PowerPoint presentation summarizing the project
+## Project Structure
 
-└── AIR FIG/                # Folder containing figures and media
+```
+Simulate-a-Mobile-Robot-in-a-Warehouse-Using-Gazebo/
+├── AIR_Report_Final.docx         - Final project report (Microsoft Word)
+├── air_pptNew.pptx               - PowerPoint presentation summarizing the project
+├── SIMULATION VIDEO.mp4          - Demo video of the warehouse robot simulation
+├── matlabcode.m                  - MATLAB script for path planning/algorithm testing
+├── Gazebo simulation.jpg         - Screenshot of the Gazebo warehouse environment
+├── Bidirectional Navigation.jpg  - Visualization of robot's bidirectional pathfinding
+├── Validated Paths.jpg           - Image showing collision-free validated paths
+├── Ware Occupancy GRID.jpg       - Warehouse grid map for navigation
+```
 
-├── Bidirectional Navigation.jpg  
+## Technologies Used
 
-├── Gazebo simulation.jpg 
+- **Gazebo 11** – High-fidelity robot simulation
+- **ROS Noetic** – Robot Operating System for middleware
+- **MATLAB R2024b** – Algorithm development and visualization
+- **RViz** – Real-time robot visualization
+- **Python** – Path planning and control scripts
+- **URDF/SDF** – Robot and environment modeling
 
-├── SIMULATION VIDEO.mp4
+## Installation and Setup
 
-├── Validated Paths.jpg
+### Prerequisites
 
-└── Ware Occupancy GRID.jpg
-\`\`\`
+- Ubuntu 20.04 LTS (or a VM)
+- ROS Noetic (installed and configured)
+- Gazebo 11
+- MATLAB R2024b (optional for visualization)
 
-## 🚀 Project Highlights
+### Steps
 
-- **Bidirectional Navigation:** Efficient movement strategy through grid maps.
-- **Path Validation:** Techniques used to ensure path safety and efficiency.
-- **Occupancy Grid Mapping:** Real-time mapping and obstacle representation.
-- **Gazebo Simulation:** Robotics simulation showcasing autonomous pathing.
-- **MATLAB Implementation:** All navigation logic scripted using MATLAB.
+1. **Clone the repository:**
+```bash
+git clone https://github.com/<your-username>/Simulate-a-Mobile-Robot-in-a-Warehouse-Using-Gazebo.git
+cd Simulate-a-Mobile-Robot-in-a-Warehouse-Using-Gazebo
+```
 
-## 🧠 Technologies Used
+2. **Set up the ROS workspace:**
+```bash
+mkdir -p ~/catkin_ws/src
+cp -r Simulate-a-Mobile-Robot-in-a-Warehouse-Using-Gazebo ~/catkin_ws/src/
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+```
 
-- MATLAB
-- Robotics Toolbox / Custom Algorithms
-- Gazebo (for visualization, assumed from images)
-- Microsoft Office (for documentation and presentation)
+3. **Launch the simulation:**
+```bash
+roslaunch warehouse_navigation simulation.launch
+```
 
-## 📷 Visual Demonstrations
+4. **Run path planning (optional):**
+```bash
+rosrun warehouse_navigation dijkstra_path_planner.py
+```
 
-Visual content including simulation images and a demo video can be found in the \`AIR FIG\` folder.
+5. **Visualize in MATLAB (optional):**
+Open `matlab/dijkstra_3D_simulation.m` and execute the script.
 
-## 📑 Report & Presentation
+## Results
 
-Refer to:
-- \`AIR_Report_Final_.docx\` for in-depth technical documentation.
-- \`air_pptNew.pptx\` for project summary and visuals.
+- **Successful Navigation** – The robot reaches its goal while avoiding obstacles.
+- **Optimal Pathfinding** – Dijkstra’s algorithm ensures the shortest path.
+- **Dynamic Re-routing** – Adjusts path if obstacles move or the goal changes.
 
-## 🧪 How to Run the Code
+## Future Improvements
 
-1. Open MATLAB.
-2. Load \`matlabcode.m\`.
-3. Run the script or use section-wise execution.
-4. Visual outputs will be displayed as figures or plots.
+- SLAM Integration – For autonomous warehouse mapping.
+- Interactive Goal Setting – Real-time goal updates via RViz.
+- Reinforcement Learning – Advanced navigation strategies.
 
-> Ensure all paths are correctly set if the script uses external files or images.
+## Author
 
-## 📽 Demo Video
+**HemanthKumar**  
+Email:- hk1amrita@gmail.com
+LinkedIn: https://www.linkedin.com/in/hemanth-kumar-a63008326/
 
-A full simulation demonstration is available in:  
-📹 \`AIR FIG/SIMULATION VIDEO.mp4\`
-
-## 📬 Contact
-
-For any questions or collaboration, please refer to the contact details in the report.
-
----
-
-© 2025 Autonomous Navigation Research Team
-EOF
